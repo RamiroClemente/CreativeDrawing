@@ -91,6 +91,110 @@
     .contact-form-card{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:42px;align-items:start}
     .contact-form{width:100%}.contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field-label{display:grid;gap:7px;font-size:12px;font-weight:var(--medium);letter-spacing:.02em}.field-label input,.field-label textarea{width:100%;border:1px solid #cfcfcf;border-radius:14px;background:#fff;color:#111;padding:14px 15px;font:inherit;outline:none}.field-label textarea{resize:vertical;min-height:130px}.field-label input:focus,.field-label textarea:focus{border-color:#555}.field-full{grid-column:1/-1}.contact-response{min-height:24px;font-size:15px;line-height:1.5}.contact-response.success{padding:18px 0;font-weight:var(--medium)}.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
     @media(max-width:760px){.contact-form-card{grid-template-columns:1fr;gap:24px}.contact-fields{grid-template-columns:1fr}.field-full{grid-column:1}}
+
+
+    /* === FORCED RESPONSIVE LAYOUT — production override === */
+    html,body{width:100%;max-width:100%;overflow-x:hidden}
+    body{min-width:0}
+    .wrap{width:calc(100% - 36px);max-width:var(--max);margin-left:auto;margin-right:auto}
+    .nav,.navlinks,.hero-grid,.hero-copy,.strip,.section-head,.cards,.card,.magnet,.session,.session-main,.session-side,.bio,.bio-photo,.bio-copy,.faq,.contact-card,.contact-form,.contact-fields,.final,.footer-row{min-width:0;max-width:100%}
+    p,h1,h2,h3,summary,.btn,.brand,.bullet,.stat,.field-label{overflow-wrap:anywhere}
+    iframe,video,embed,object{max-width:100%}
+    .btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25}
+    .hero-actions,.final-actions{max-width:100%}
+    .bio-photo img{max-width:none}
+
+    @media (max-width:1100px){
+      .wrap{width:calc(100% - 32px)}
+      .hero{padding-top:42px}
+      .hero-grid{gap:24px}
+      section{padding:42px 0}
+      .session-main,.session-side{padding:26px}
+    }
+
+    @media (max-width:900px){
+      .nav{gap:12px}
+      .navlinks{gap:10px}
+      .navlinks>a:not(.btn){display:none}
+      .hero-grid,.section-head,.magnet,.session,.bio,.contact-card,.contact-form-card{grid-template-columns:minmax(0,1fr)!important}
+      .cards{grid-template-columns:minmax(0,1fr)}
+      .faq{grid-template-columns:minmax(0,1fr)}
+      .section-head{gap:14px}
+      .bio-photo{min-height:0;aspect-ratio:4/5}
+      .bio-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+      .contact-form-card{gap:24px}
+      .contact-fields{grid-template-columns:minmax(0,1fr)}
+      .field-full{grid-column:1}
+    }
+
+    @media (max-width:700px){
+      .wrap{width:calc(100% - 24px)}
+      .topbar{backdrop-filter:blur(10px)}
+      .nav{min-height:62px;gap:8px}
+      .brand{font-size:12px;letter-spacing:.08em;line-height:1.15;white-space:normal;max-width:52vw}
+      .navlinks{margin-left:auto;gap:8px;flex:0 0 auto}
+      .navlinks .btn{display:none}
+      .lang-select{font-size:12px;padding:8px 30px 8px 11px;max-width:118px}
+      .hero{padding:26px 0 22px}
+      .hero-copy{padding:28px 22px;border-radius:20px}
+      h1{font-size:clamp(38px,12vw,56px);line-height:1;letter-spacing:-.045em;margin-bottom:18px}
+      .lede{font-size:18px;line-height:1.42;margin-bottom:22px}
+      .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:10px}
+      .hero-actions .btn{width:100%}
+      .strip{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+      .stat{min-height:102px;padding:15px;border-radius:16px}
+      .stat strong{font-size:22px}
+      section{padding:34px 0}
+      .section-head h2,.bio-copy h2,.contact-card h2{font-size:clamp(30px,9vw,42px);line-height:1.04;letter-spacing:-.035em}
+      .section-head p{font-size:17px}
+      .card{padding:20px}
+      .magnet{padding:26px 20px;border-radius:22px;gap:18px}
+      .magnet h2{font-size:clamp(30px,9vw,44px);line-height:1.02}
+      .lead-form input[type=email]{min-width:0}
+      .video-wrap{width:100%;border-radius:14px}
+      .bio{gap:14px}
+      .bio-photo{aspect-ratio:4/5;border-radius:20px}
+      .bio-copy{padding:26px 22px;border-radius:20px}
+      .session{gap:12px}
+      .session-main,.session-side{padding:24px 20px;border-radius:20px}
+      .session-main .date{font-size:clamp(38px,12vw,54px);letter-spacing:-.04em}
+      .bullet{grid-template-columns:20px minmax(0,1fr);gap:8px}
+      .included-mentorship .btn{width:100%}
+      .faq details{padding:16px 17px}
+      .contact-card{padding:26px 20px;border-radius:22px}
+      .field-label input,.field-label textarea{min-width:0;padding:13px 14px}
+      .contact-form .btn{width:100%}
+      .final{padding:32px 20px;border-radius:22px}
+      .final h2{font-size:clamp(34px,10vw,48px);line-height:1.02;letter-spacing:-.04em}
+      .final-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
+      .final-actions .btn{width:100%}
+      .footer-row{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+
+    @media (max-width:460px){
+      .wrap{width:calc(100% - 20px)}
+      .brand{max-width:50vw;font-size:12px}
+      .lang-select{max-width:112px}
+      .hero-copy{padding:24px 18px}
+      h1{font-size:clamp(36px,12vw,48px)}
+      .strip{grid-template-columns:minmax(0,1fr)}
+      .stat{min-height:88px}
+      .magnet,.bio-copy,.session-main,.session-side,.contact-card,.final{padding-left:18px;padding-right:18px}
+      .bio-photo{aspect-ratio:3/4}
+      .preview-step .mini-grid{grid-template-columns:minmax(0,1fr)}
+      .code{max-width:100%;white-space:normal}
+    }
+
+    @media (max-width:360px){
+      .wrap{width:calc(100% - 16px)}
+      .nav{gap:6px}
+      .brand{max-width:47vw;letter-spacing:.05em}
+      .lang-select{max-width:105px;padding-left:9px;padding-right:26px}
+      .hero-copy{padding:22px 16px}
+      h1{font-size:35px}
+      .lede{font-size:17px}
+    }
+
 </style>
 </head>
 <body>
@@ -159,7 +263,7 @@
 <div class="magnet">
 <div>
 <p class="eyebrow" data-t="magnetEyebrow" style="color:#aaa">See what a real workshop feels like</p>
-<h2 data-t="magnetTitle">Watch a Creative Drawing workshop preview</h2>
+<h2 data-t="magnetTitle">Watch a real 2026 Creative Drawing preview + get 10% off.</h2>
 <div id="leadGate">
 <form class="lead-form" id="leadForm" novalidate="">
 <label class="sr-only" for="leadEmail">Email</label>
@@ -184,7 +288,14 @@
 </div>
 <div>
 <div class="video-wrap" id="inlineVideo">
-<iframe allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" loading="lazy" src="https://iframe.mediadelivery.net/embed/77484/58bb5938-d6dc-4ea1-8de0-df193b62f9ba?autoplay=false&amp;loop=false&amp;muted=false&amp;preload=false&amp;responsive=true" title="Ramiro Clemente 2026 workshop preview"></iframe>
+<iframe
+  src="https://www.youtube-nocookie.com/embed/jmAEe0fypKw?rel=0&playsinline=1"
+  title="Ramiro Clemente workshop preview"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
 </div>
 
 </div>
@@ -286,7 +397,7 @@ const copy = {
   en:{
     navWorkshop:'Workshop',navAbout:'About',bookNav:'Save my spot',heroEyebrow:'Live online · 2 sessions',heroTitle:'Make creative work without waiting for inspiration.',heroLede:'Creative Drawing is a practical mixed-media workshop for curious adults who want a freer, more reliable way to start, explore, make decisions and finish a piece—even on days when inspiration is nowhere to be found.',bookHero:'Join Creative Drawing · €126',leadHero:'See inside a real workshop + 10% off',stat1:'Live online sessions',stat2:'2-session format',stat3:'Private recording link',stat4:'Post-workshop mentorship',stat3Value:'Lifetime',stat4Value:'15 extra days',
     whyTitle:'Feeling stuck?',card1Title:'Start without waiting',card1Text:'Use simple marks and actions to get the page moving.',card2Title:'Use accidents',card2Text:'Turn unexpected marks into material for your next decision.',card3Title:'Know what comes next',card3Text:'Learn what to keep, cover, connect or leave alone—and when to stop.',
-    magnetEyebrow:'See what a real workshop feels like',magnetTitle:'Watch a Creative Drawing workshop preview',magnetBtn:'Get the preview + code',codeLabel:'Subscriber code',
+    magnetEyebrow:'See what a real workshop feels like',magnetTitle:'Watch a real 2026 Creative Drawing preview + get 10% off.',magnetBtn:'Get the preview + code',codeLabel:'Subscriber code',
     nextEyebrow:'Workshop schedule',dateBig:'Two live<br>sessions',timeText:'7:00–9:00 p.m. · Barcelona time<br>Live online via Zoom',bookDetails:'Save my spot',timezoneNote:'Rescheduling may be available for extreme time differences.',includedEyebrow:'What’s included',inc1b:'Two live sessions',inc1s:'4 hours total of demonstrations, guided work, discussion and questions.',inc2b:'Lifetime access to the recordings',inc2s:'Rewatch the process later and return to the exercises at your own pace.',inc3b:'15 extra days of mentorship',inc3s:'Extra follow-up support to help you keep applying the method after the live sessions.',inc4b:'10% off Ramiro’s shop',inc4s:'A participant benefit included with the workshop.',includedMentorshipBtn:'Explore the mentorship →',
     aboutEyebrow:'About me',aboutText1:'I’m a professional, full-time mixed-media artist and educator based in Barcelona. My work combines drawing, painting, collage, image transfer, calligraphy and expressive line to build layered images through improvisation and visual decision-making.',aboutText2:'I’m also a Royal Talens Brand Ambassador and teach workshops and mentor artists internationally. I’m not interested in teaching you to copy my style. I want to show you the systems I use to keep working, experimenting and making stronger decisions when inspiration isn’t available.',faq1q:'Do I need an art background?',faq1a:'No. The workshop is designed to work for curious beginners as well as experienced artists. The focus is on process, experimentation and decision-making rather than technical perfection.',faq2q:'What if I can’t attend live?',faq2a:'The sessions are recorded and your booking includes lifetime access to the recordings. Rescheduling may be available for extreme time differences.',faq3q:'Do I need to buy special materials?',faq3a:'No. Use what you already have whenever possible. A simple mix of paper, ink or pens, white acrylic, a few colours, brushes and optional collage/transfer materials is enough to participate.',faq5q:'How does the 15-day mentorship work?',faq5Btn:'Explore the full mentorship →',
     finalTitle:'You don’t need inspiration to trust in. You need a method you can repeat.',finalBook:'Join Creative Drawing · €126',finalPreview:'See inside a real workshop + 10% off',finalMentor:'Looking for deeper support? Mentorship →',contactEyebrow:'Contact',contactTitle:'Questions before joining?',contactText:'Send me a message and I’ll get back to you shortly.',contactNameLabel:'Name',contactEmailLabel:'Email',contactMessageLabel:'Message',contactSubmit:'Send message',contactThanks:'Thanks for contacting me. I’ll get back to you shortly.',contactError:'I couldn’t send your message right now. Please try again in a moment.',footerText:'Creative Drawing · Online mixed-media workshop',consentText:'I agree to receive the Creative Drawing preview, workshop updates and subscriber benefits by email. I can unsubscribe at any time.',continueBtn:'Continue',previewEyebrow:'You’re in',previewTitle:'Here’s how Creative Drawing works.',mini1:'<strong>Session 1:</strong> start several pieces, generate material, loosen control and create situations worth responding to.',mini2:'<strong>Session 2:</strong> return to the work, layer, edit, connect decisions and explore different ways to resolve the image.',previewCodeText:'Use this at workshop checkout for 10% off',backBtn:'Back',continueWorkshop:'Continue to the workshop'
@@ -294,7 +405,7 @@ const copy = {
   es:{
     navWorkshop:'Workshop',navAbout:'Sobre mí',bookNav:'Reservar plaza',heroEyebrow:'Online en directo · 2 sesiones',heroTitle:'Crea sin esperar a que aparezca la inspiración.',heroLede:'Creative Drawing es un workshop práctico de técnicas mixtas para adultos curiosos que quieren una forma más libre y fiable de empezar, explorar, tomar decisiones y terminar una obra, incluso en los días en los que la inspiración no aparece.',bookHero:'Unirme a Creative Drawing · 126 €',leadHero:'Mira por dentro un workshop real + 10% dto.',stat1:'Sesiones online en directo',stat2:'Formato de 2 sesiones',stat3:'Enlace privado a las grabaciones',stat4:'Mentoría posterior al workshop',stat3Value:'De por vida',stat4Value:'15 días extra',
     whyTitle:'¿Te sientes bloqueado?',card1Title:'Empieza sin esperar',card1Text:'Usa marcas y acciones simples para poner la página en movimiento.',card2Title:'Usa los accidentes',card2Text:'Convierte las marcas inesperadas en material para tu siguiente decisión.',card3Title:'Sabe qué hacer después',card3Text:'Aprende qué mantener, cubrir, conectar o dejar quieto, y cuándo parar.',
-    magnetEyebrow:'Descubre cómo se siente un workshop real',magnetTitle:'Mira un adelanto de un workshop Creative Drawing',magnetBtn:'Ver preview + código',codeLabel:'Código de suscriptor',
+    magnetEyebrow:'Descubre cómo se siente un workshop real',magnetTitle:'Mira una preview real de Creative Drawing 2026 + consigue un 10% de descuento.',magnetBtn:'Ver preview + código',codeLabel:'Código de suscriptor',
     nextEyebrow:'Horario del workshop',dateBig:'Dos sesiones<br>en directo',timeText:'19:00–21:00 · Hora de Barcelona<br>Online en directo por Zoom',bookDetails:'Reservar plaza',timezoneNote:'Puede haber reprogramación para diferencias horarias extremas.',includedEyebrow:'Qué incluye',inc1b:'Dos sesiones en directo',inc1s:'4 horas en total de demostraciones, trabajo guiado, conversación y preguntas.',inc2b:'Acceso de por vida a las grabaciones',inc2s:'Vuelve al proceso más adelante y repite los ejercicios a tu propio ritmo.',inc3b:'15 días extra de mentoría',inc3s:'Seguimiento extra para ayudarte a seguir aplicando el método después de las sesiones en directo.',inc4b:'10% de descuento en la tienda de Ramiro',inc4s:'Un beneficio para participantes incluido con el workshop.',includedMentorshipBtn:'Explorar la mentoría →',
     aboutEyebrow:'Sobre mí',aboutText1:'Soy artista profesional de técnicas mixtas y docente a tiempo completo, y vivo en Barcelona. Mi trabajo combina dibujo, pintura, collage, transferencia de imagen, caligrafía y línea expresiva para construir imágenes por capas mediante improvisación y decisiones visuales.',aboutText2:'También soy Brand Ambassador de Royal Talens e imparto workshops y mentorías a artistas internacionalmente. No me interesa enseñarte a copiar mi estilo. Quiero enseñarte los sistemas que uso para seguir trabajando, experimentando y tomando mejores decisiones cuando la inspiración no está disponible.',faq1q:'¿Necesito formación artística?',faq1a:'No. El workshop está pensado tanto para principiantes curiosos como para artistas con experiencia. El foco está en el proceso, la experimentación y la toma de decisiones, no en la perfección técnica.',faq2q:'¿Y si no puedo asistir en directo?',faq2a:'Las sesiones se graban y tu reserva incluye acceso de por vida a las grabaciones. Puede haber reprogramación para diferencias horarias extremas.',faq3q:'¿Tengo que comprar materiales especiales?',faq3a:'No. Usa lo que ya tienes siempre que sea posible. Con una combinación sencilla de papel, tinta o rotuladores, acrílico blanco, algunos colores, pinceles y materiales opcionales de collage/transfer puedes participar.',faq5q:'¿Cómo funcionan los 15 días de mentoría?',faq5Btn:'Ver la mentoría completa →',
     finalTitle:'No necesitas confiar en la inspiración. Necesitas un método que puedas repetir.',finalBook:'Unirme a Creative Drawing · 126 €',finalPreview:'Mira por dentro un workshop real + 10% dto.',finalMentor:'¿Buscas un acompañamiento más profundo? Mentoría →',contactEyebrow:'Contacto',contactTitle:'¿Tienes alguna pregunta antes de apuntarte?',contactText:'Envíame un mensaje y te responderé en breve.',contactNameLabel:'Nombre',contactEmailLabel:'Email',contactMessageLabel:'Mensaje',contactSubmit:'Enviar mensaje',contactThanks:'Gracias por contactar. Te responderé en breve.',contactError:'No he podido enviar tu mensaje ahora mismo. Inténtalo de nuevo en un momento.',footerText:'Creative Drawing · Workshop online de técnicas mixtas',consentText:'Acepto recibir por email la preview de Creative Drawing, novedades del workshop y beneficios para suscriptores. Puedo darme de baja en cualquier momento.',continueBtn:'Seguir',previewEyebrow:'Ya estás dentro',previewTitle:'Así funciona Creative Drawing.',mini1:'<strong>Sesión 1:</strong> empieza varias piezas, genera material, suelta el control y crea situaciones a las que merezca la pena responder.',mini2:'<strong>Sesión 2:</strong> vuelve al trabajo, añade capas, edita, conecta decisiones y explora distintas formas de resolver la imagen.',previewCodeText:'Úsalo en el checkout del workshop para obtener un 10% de descuento',backBtn:'Volver',continueWorkshop:'Seguir al workshop'
