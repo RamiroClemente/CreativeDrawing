@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f4ee">
+<title>Mercè en familia · Barcelona + L’Hospitalet 2026</title>
+<meta name="description" content="Guía móvil de actividades familiares de La Mercè 2026 en Barcelona y planes familiares en L’Hospitalet. Horarios, precios, edades, ubicación, consejos y fuentes.">
+<style>
+:root{
+  --bg:#f7f4ee;--card:#fffdf8;--text:#171715;--muted:#6f6c64;--line:#ded9cf;
+  --accent:#e9563f;--accent2:#176b5f;--chip:#eee9df;--warn:#fff0d6;--ok:#e5f4eb;
+  --shadow:0 8px 24px rgba(38,32,22,.07);--radius:18px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.35}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 14px 70px}
+.hero{padding:22px 2px 12px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--accent2)}
+h1{font-size:clamp(28px,8vw,48px);line-height:.98;margin:8px 0 12px;letter-spacing:-.04em}
+.lead{font-size:16px;color:var(--muted);max-width:680px;margin:0}
+.nowbar{display:flex;gap:10px;align-items:center;margin-top:16px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.nowdot{width:10px;height:10px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 5px rgba(23,107,95,.12)}
+.nowtext{font-size:13px;min-width:0}.nowtext strong{display:block}.nowtext span{color:var(--muted)}
+.controls{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.94);backdrop-filter:blur(10px);padding:10px 0 11px;border-bottom:1px solid rgba(222,217,207,.8)}
+.scrollchips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;scrollbar-width:none}.scrollchips::-webkit-scrollbar{display:none}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 13px;font-size:13px;font-weight:750;white-space:nowrap;color:var(--text);min-height:42px}
+.chip[aria-pressed="true"]{background:var(--text);color:white;border-color:var(--text)}
+.searchrow{display:grid;grid-template-columns:1fr auto;gap:8px}
+.search{width:100%;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 13px;font-size:16px;outline:none}.search:focus{border-color:#777}
+.count{display:flex;align-items:center;padding:0 4px;color:var(--muted);font-size:13px;font-weight:700}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:20px 2px 10px}
+.sectionhead h2{font-size:20px;margin:0;letter-spacing:-.02em}.sectionhead small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.cardtop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.time{font-size:13px;font-weight:850;color:var(--accent2);margin-bottom:4px}
+.title{font-size:20px;line-height:1.08;font-weight:860;letter-spacing:-.025em;margin:0}
+.star{border:1px solid var(--line);background:transparent;border-radius:999px;width:44px;height:44px;font-size:20px;flex:0 0 44px}
+.star.on{background:#fff1b8;border-color:#e4ca62}
+.place{margin:8px 0 9px;color:var(--muted);font-size:14px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}.tag{font-size:12px;font-weight:750;background:var(--chip);border-radius:999px;padding:5px 8px}.tag.live{background:var(--ok);color:#175c40}.tag.soon{background:#e9efff;color:#304b86}.tag.done{background:#ececec;color:#707070}.tag.warn{background:var(--warn);color:#7a4b06}
+.summary{font-size:14px;margin:0 0 10px}
+.quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:10px 0}
+.q{border-top:1px solid var(--line);padding-top:7px;font-size:12px;color:var(--muted)}.q strong{display:block;color:var(--text);font-size:13px}
+details{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
+summary{cursor:pointer;list-style:none;padding:10px 0 4px;font-weight:800;font-size:14px}summary::-webkit-details-marker{display:none}
+.detail{font-size:14px;color:#333;padding:2px 0 8px}.detail p{margin:8px 0}
+.tip{background:#f3efe6;border-radius:12px;padding:10px 11px;margin:9px 0}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 12px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:820;border:1px solid var(--line);background:#fff}.btn.primary{background:var(--text);color:white;border-color:var(--text)}
+.notice{margin:18px 0;background:#1d1d1b;color:#fff;border-radius:18px;padding:16px}.notice h3{margin:0 0 8px;font-size:18px}.notice p{margin:5px 0;color:#dedbd5;font-size:13px}
+.empty{display:none;text-align:center;padding:36px 12px;color:var(--muted)}
+.footer{padding:28px 3px 0;color:var(--muted);font-size:12px}.footer a{text-decoration:underline}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:16px}.quick{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Guía familiar · 24–27 septiembre 2026</div>
+    <h1>Mercè en familia</h1>
+    <p class="lead">Una selección práctica para decidir sobre la marcha: horarios, precio, edades, ubicación, nivel de ruido, reserva, consejos para ir con niños y enlaces de comprobación.</p>
+    <div class="nowbar" aria-live="polite">
+      <span class="nowdot"></span>
+      <div class="nowtext"><strong id="nowTitle">Calculando qué hay ahora…</strong><span id="nowSub">Hora local de Barcelona</span></div>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="Filtros">
+    <div class="scrollchips" id="dayFilters">
+      <button class="chip" data-day="today" aria-pressed="true">Hoy</button>
+      <button class="chip" data-day="2026-09-24" aria-pressed="false">Jue 24</button>
+      <button class="chip" data-day="2026-09-25" aria-pressed="false">Vie 25</button>
+      <button class="chip" data-day="2026-09-26" aria-pressed="false">Sáb 26</button>
+      <button class="chip" data-day="2026-09-27" aria-pressed="false">Dom 27</button>
+      <button class="chip" data-day="all" aria-pressed="false">Todos</button>
+    </div>
+    <div class="scrollchips" id="typeFilters">
+      <button class="chip" data-filter="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-filter="barcelona" aria-pressed="false">Barcelona</button>
+      <button class="chip" data-filter="hospitalet" aria-pressed="false">L’Hospitalet</button>
+      <button class="chip" data-filter="indoor" aria-pressed="false">Interior</button>
+      <button class="chip" data-filter="outdoor" aria-pressed="false">Exterior</button>
+      <button class="chip" data-filter="favorites" aria-pressed="false">★ Guardados</button>
+    </div>
+    <div class="searchrow">
+      <input id="search" class="search" type="search" placeholder="Buscar: circo, taller, fuego…" aria-label="Buscar actividad">
+      <div class="count" id="count"></div>
+    </div>
+  </section>
+
+  <div class="sectionhead"><h2 id="listTitle">Actividades</h2><small>Toca una tarjeta para ampliar</small></div>
+  <section class="grid" id="cards"></section>
+  <div class="empty" id="empty">No hay actividades con esos filtros.</div>
+
+  <aside class="notice">
+    <h3>Antes de salir con niños</h3>
+    <p>• En actividades multitudinarias, conviene llegar con margen y acordar un punto de encuentro.</p>
+    <p>• Para correfoc: ropa de algodón que cubra brazos y piernas, calzado cerrado, cabeza protegida y especial atención a niños sensibles al ruido o a las chispas.</p>
+    <p>• Para drones y Piromusical: son horarios nocturnos y zonas muy concurridas; el transporte público suele ser la opción más sencilla.</p>
+    <p>• Pulsa siempre “Fuente” antes de salir: los organizadores pueden modificar horarios o accesos.</p>
+  </aside>
+
+  <footer class="footer">
+    <strong>Datos verificados el 24/09/2026.</strong> Esta guía resume fuentes municipales, organizadores y fichas de programación. No sustituye avisos de última hora del Ayuntamiento. 
+    <br><br>
+    Fuentes generales: <a href="https://programesfestamajor.cat/barcelona/2026" target="_blank" rel="noopener">programa La Mercè 2026</a> ·
+    <a href="https://www.l-h.cat/cultura/enfamilia.aspx" target="_blank" rel="noopener">L’Hospitalet en família</a>.
+  </footer>
+</main>
+
+<script>
+const events = [
+{
+ id:"circ-gaudi",date:"2026-09-24",sessions:[["11:00","15:00"],["16:00","19:00"]],city:"barcelona",mode:"outdoor",
+ title:"Circ de les Musaranyes · Repte Gaudí",place:"Parc de les Glòries",address:"Plaça de les Glòries Catalanes, 1, Barcelona",
+ price:"Gratis",age:"Ideal 4–12",duration:"Entrada flexible",noise:"Bajo–medio",reservation:"No indicada",
+ summary:"Instalación participativa con construcciones, enigmas visuales, equilibrio, luz y movimiento inspirados en Gaudí.",
+ tip:"Muy buena opción si queréis una actividad de juego libre sin estar sentados. El programa indica espacio tranquilo y accesibilidad para movilidad reducida.",
+ source:"https://programesfestamajor.cat/barcelona/2026/espais/parc-de-les-glories",
+ map:"https://www.google.com/maps/search/?api=1&query=Parc+de+les+Glories+Barcelona"
+},
+{
+ id:"confuci-24",date:"2026-09-24",sessions:[["11:00","19:00"]],city:"barcelona",mode:"outdoor",
+ title:"Rincón de juegos chinos",place:"Parc de l’Estació del Nord",address:"Parc de l’Estació del Nord, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"Libre",noise:"Bajo–medio",reservation:"Entrada libre",
+ summary:"Dragón gigante, caracteres chinos, números, jianzi, taichí, paisajes de China y photocall.",
+ tip:"Es una propuesta especialmente pensada para público infantil y familiar. El organizador anuncia actividad de 11 a 19 h; el programa municipal puede mostrarla por franjas.",
+ source:"https://confuciobarcelona.cat/activitats/jocs-xinesos-merce-2026",
+ map:"https://www.google.com/maps/search/?api=1&query=Parc+de+l%27Estacio+del+Nord+Barcelona"
+},
+{
+ id:"cavalcada",date:"2026-09-24",sessions:[["17:30","20:30"]],city:"barcelona",mode:"outdoor",
+ title:"Cavalcada + Rolling Lantern Show",place:"Plaça Catalunya → Plaça Sant Jaume",address:"Plaça de Catalunya, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"3 h aprox.",noise:"Medio–alto",reservation:"Acceso libre",
+ summary:"Gegants, capgrossos, cultura popular barcelonesa y faroles rodantes llegados de Shanghái.",
+ tip:"Es uno de los actos grandes del día y puede estar muy lleno. Para familias, suele ser más cómodo situarse en un tramo del recorrido que intentar seguir toda la comitiva.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0584-cavalcada-de-la-merce-rolling-lantern-show",
+ map:"https://www.google.com/maps/search/?api=1&query=Placa+de+Catalunya+Barcelona"
+},
+{
+ id:"drones",date:"2026-09-24",sessions:[["21:00","21:20"],["22:00","22:20"]],city:"barcelona",mode:"outdoor",
+ title:"750 drones · El fil vermell",place:"Platja de l’Espigó del Gas",address:"Passeig Marítim de la Barceloneta – Oriol Bohigas, Barcelona",
+ price:"Gratis",age:"Todas las edades",duration:"20 min",noise:"Bajo; zona concurrida",reservation:"Acceso libre",
+ summary:"Dos pases de una coreografía de 750 drones que conecta visualmente Barcelona y Shanghái.",
+ tip:"Buena opción nocturna para niños a quienes no les gusta el estruendo de la pirotecnia. Aun así, el paseo marítimo puede estar muy concurrido.",
+ source:"https://programesfestamajor.cat/barcelona/2026/espais/platja-de-l-espigo-del-gas",
+ map:"https://www.google.com/maps/search/?api=1&query=Platja+de+l%27Espigo+del+Gas+Barcelona"
+},
+{
+ id:"mascaras",date:"2026-09-25",sessions:[["17:30","19:30"]],city:"barcelona",mode:"indoor",
+ title:"Máscaras y superpoderes",place:"Museu Etnològic i de Cultures del Món",address:"Carrer de Montcada, 12, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"2 h",noise:"Bajo",reservation:"No indicada en la ficha",
+ summary:"Visita participativa a máscaras de África y Oceanía y taller creativo para realizar una máscara propia.",
+ tip:"Plan de interior, útil si preferís una tarde más tranquila y creativa. La ficha de La Mercè lo marca como actividad familiar.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0630-visita-i-taller-en-familia-mascares-i-superpoders-un-viatge-per-africa-i-oceania-al-museu-etnologic-i-de-cultures-del-mon-montcada",
+ map:"https://www.google.com/maps/search/?api=1&query=Museu+Etnologic+Carrer+de+Montcada+12+Barcelona"
+},
+{
+ id:"terra-sostre",date:"2026-09-26",sessions:[["11:00","12:30"]],city:"hospitalet",mode:"indoor",
+ title:"Entre Tecles · Terra i sostre",place:"Biblioteca Central Tecla Sala",address:"Av. Josep Tarradellas i Joan, 44, L’Hospitalet de Llobregat",
+ price:"Gratis",age:"5–12 + adulto",duration:"90 min aprox.",noise:"Bajo",reservation:"Entrada libre",
+ summary:"Taller de arquitectura: imaginar nuevas casas y espacios y construir maquetas a partir de imágenes y referentes artísticos.",
+ tip:"La opción más clara en L’Hospitalet para este fin de semana: interior, creativa y expresamente diseñada para familias con niños de 5 a 12 años.",
+ source:"https://www.l-h.cat/cultura/enfamilia.aspx",
+ map:"https://www.google.com/maps/search/?api=1&query=Biblioteca+Central+Tecla+Sala+Hospitalet"
+},
+{
+ id:"minimons",date:"2026-09-26",sessions:[["10:30","13:30"]],city:"barcelona",mode:"outdoor",
+ title:"Minimons · universo Beatrix Potter",place:"Jardins de Joan Maragall · Palauet Albéniz",address:"Av. de l’Estadi, 69, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"Recorrido libre",noise:"Bajo",reservation:"No indicada",
+ summary:"Pequeñas bibliotecas, escenas tridimensionales, audio y juegos interactivos inspirados en Beatrix Potter.",
+ tip:"Especialmente interesante si buscáis una actividad calmada. El espacio también dispone de una zona tranquila para personas neurodivergentes durante la programación.",
+ source:"https://programesfestamajor.cat/barcelona/2026/espais/jardins-de-joan-maragall-palauet-albeniz",
+ map:"https://www.google.com/maps/search/?api=1&query=Jardins+de+Joan+Maragall+Barcelona"
+},
+{
+ id:"raurau-26",date:"2026-09-26",sessions:[["12:30","13:15"]],city:"barcelona",mode:"outdoor",
+ title:"La Tresca i la Verdesca · Rau-rau",place:"Jardins de Joan Maragall · Palauet Albéniz",address:"Av. de l’Estadi, 69, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"45 min",noise:"Medio",reservation:"No indicada",
+ summary:"Concierto familiar construido alrededor de los sonidos del cuerpo y del entorno: respiraciones, pasos, estornudos, ritmos y juego.",
+ tip:"Formato corto y familiar. La ficha indica accesibilidad para personas con movilidad reducida.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0197-la-tresca-i-la-verdesca",
+ map:"https://www.google.com/maps/search/?api=1&query=Jardins+de+Joan+Maragall+Barcelona"
+},
+{
+ id:"port-olimpic",date:"2026-09-26",sessions:[["11:00","13:30"],["16:30","19:30"]],city:"barcelona",mode:"outdoor",
+ title:"Port Olímpic · talleres y circo familiar",place:"Port Olímpic",address:"Port Olímpic, Barcelona",
+ price:"Gratis",age:"Todas las edades",duration:"Bloques de mañana y tarde",noise:"Medio",reservation:"Acceso libre",
+ summary:"Talleres marinos, juego, circo, teatro y propuestas visuales. Una zona práctica para encadenar varias actividades sin desplazarse.",
+ tip:"Buena opción para pasar varias horas en un único lugar. La programación incluye talleres de creación y espectáculos para todos los públicos.",
+ source:"https://portolimpic.barcelona/es/merce",
+ map:"https://www.google.com/maps/search/?api=1&query=Port+Olimpic+Barcelona"
+},
+{
+ id:"acrobatica",date:"2026-09-26",sessions:[["13:30","14:15"],["17:45","18:30"]],city:"barcelona",mode:"outdoor",
+ title:"Shanghai Acrobatic Troupe",place:"Parc dels Auditoris · Fòrum",address:"Parc dels Auditoris, Barcelona",
+ price:"Gratis",age:"Todas las edades",duration:"45 min",noise:"Medio",reservation:"No indicada",
+ summary:"Circo chino de gran formato: diábolos, equilibrios, saltos, manipulación de objetos, pal chino y barra rusa.",
+ tip:"Muy visual y fácil de disfrutar incluso con niños que no quieran seguir una historia verbal. Hay dos pases.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0245-shanghai-acrobatic-troupe",
+ map:"https://www.google.com/maps/search/?api=1&query=Parc+dels+Auditoris+Barcelona"
+},
+{
+ id:"shanghai-dance",date:"2026-09-26",sessions:[["17:30","18:30"]],city:"barcelona",mode:"outdoor",
+ title:"Shanghai Dance School",place:"Parc de l’Estació del Nord",address:"Parc de l’Estació del Nord, Barcelona",
+ price:"Gratis",age:"Todas las edades",duration:"60 min",noise:"Medio",reservation:"No indicada",
+ summary:"Selección de danza china clásica, folclórica y contemporánea con piezas breves y muy visuales.",
+ tip:"Horario corregido y verificado: es el sábado 26, no el jueves 24.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0240-shanghai-dance-school",
+ map:"https://www.google.com/maps/search/?api=1&query=Parc+de+l%27Estacio+del+Nord+Barcelona"
+},
+{
+ id:"correfoc",date:"2026-09-26",sessions:[["18:00","19:45"]],city:"barcelona",mode:"outdoor",
+ title:"Correfoc dels petits",place:"Passeig de Gràcia",address:"Passeig de Gràcia amb Provença, Barcelona",
+ price:"Gratis",age:"Infantil / familiar",duration:"1 h 45 min",noise:"Alto · fuego",reservation:"Acceso libre",
+ summary:"Correfoc adaptado al público infantil, con fuego y explosiones de menor intensidad que el de adultos, pero manteniendo las precauciones.",
+ tip:"Si un niño es sensible al ruido, humo o chispas, conviene verlo desde más lejos. Lleva ropa de algodón que cubra la piel, calzado cerrado y protección para la cabeza.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0677-correfoc-dels-petits",
+ map:"https://www.google.com/maps/search/?api=1&query=Passeig+de+Gracia+Provença+Barcelona"
+},
+{
+ id:"jocs-arreu",date:"2026-09-27",sessions:[["11:30","12:30"]],city:"barcelona",mode:"indoor",
+ title:"Juegos de aquí, juegos de todas partes",place:"Museu Etnològic · Montjuïc",address:"Passeig de Santa Madrona, 16–22, Barcelona",
+ price:"Gratis",age:"6–10 recomendado",duration:"60 min",noise:"Bajo",reservation:"Inscripción previa · plazas limitadas",
+ summary:"Visita-taller para explorar juegos y juguetes de distintas épocas y culturas siguiendo pistas dentro del museo.",
+ tip:"Es de las pocas actividades de la selección con inscripción previa explícita. Comprueba disponibilidad antes de desplazarte.",
+ source:"https://guia.barcelona.cat/ca/detall/visita-i-taller-jocs-d-aqui-jocs-d-arreu-juguem_99400782982.html",
+ map:"https://www.google.com/maps/search/?api=1&query=Museu+Etnologic+Passeig+de+Santa+Madrona+16+Barcelona"
+},
+{
+ id:"confuci-27",date:"2026-09-27",sessions:[["11:00","14:00"]],city:"barcelona",mode:"outdoor",
+ title:"Rincón de juegos chinos",place:"Parc de l’Estació del Nord",address:"Parc de l’Estació del Nord, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"Libre",noise:"Bajo–medio",reservation:"Entrada libre",
+ summary:"Última mañana del rincón de juegos: dragón gigante, caracteres, números, jianzi, taichí y propuestas participativas.",
+ tip:"Formato abierto: podéis entrar y salir sin comprometer toda la mañana.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0278-institut-confuci-de-barcelona",
+ map:"https://www.google.com/maps/search/?api=1&query=Parc+de+l%27Estacio+del+Nord+Barcelona"
+},
+{
+ id:"raurau-27",date:"2026-09-27",sessions:[["12:30","13:15"]],city:"barcelona",mode:"outdoor",
+ title:"La Tresca i la Verdesca · Rau-rau",place:"Jardins de Joan Maragall · Palauet Albéniz",address:"Av. de l’Estadi, 69, Barcelona",
+ price:"Gratis",age:"Familiar",duration:"45 min",noise:"Medio",reservation:"No indicada",
+ summary:"Segunda oportunidad de ver el concierto familiar de sonidos corporales, humor y música.",
+ tip:"Combina bien con otras propuestas de los Jardins de Joan Maragall sin cambiar de zona.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0306-la-tresca-i-la-verdesca",
+ map:"https://www.google.com/maps/search/?api=1&query=Jardins+de+Joan+Maragall+Barcelona"
+},
+{
+ id:"piromusical",date:"2026-09-27",sessions:[["22:00","22:30"]],city:"barcelona",mode:"outdoor",
+ title:"Piromusical de La Mercè",place:"Platja de la Nova Icària",address:"Pg. Marítim de Nova Icària, 60, Barcelona",
+ price:"Gratis",age:"Todas las edades",duration:"30 min",noise:"Muy alto · pirotecnia",reservation:"Acceso libre",
+ summary:"Gran cierre de La Mercè con fuegos artificiales sincronizados con una selección musical de Josep Montero, de Oques Grasses.",
+ tip:"Este año cambia de ubicación y se hace en la playa de la Nova Icària. Es multitudinario y muy ruidoso: protección auditiva para niños sensibles y llegada con bastante margen.",
+ source:"https://programesfestamajor.cat/barcelona/2026/activitats/0721-piromusical-de-la-merce",
+ map:"https://www.google.com/maps/search/?api=1&query=Platja+de+la+Nova+Icaria+Barcelona"
+}
+];
+
+const root = document.getElementById("cards");
+const count = document.getElementById("count");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
+const listTitle = document.getElementById("listTitle");
+let selectedDay = "today";
+let selectedFilter = "all";
+const favKey = "merce-familia-2026-favs";
+let favs = new Set(JSON.parse(localStorage.getItem(favKey) || "[]"));
+
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function dayLabel(d){return {"2026-09-24":"Jueves 24","2026-09-25":"Viernes 25","2026-09-26":"Sábado 26","2026-09-27":"Domingo 27"}[d]||d}
+function toDate(date,time){return new Date(date+"T"+time+":00+02:00")}
+function eventStatus(e,now=new Date()){
+  const ranges=e.sessions.map(([a,b])=>[toDate(e.date,a),toDate(e.date,b)]);
+  if(ranges.some(([a,b])=>now>=a&&now<=b)) return ["Ahora","live"];
+  const future=ranges.find(([a])=>now<a);
+  if(future){
+    const mins=Math.round((future[0]-now)/60000);
+    if(mins>=0&&mins<=90)return ["Empieza en "+mins+" min","soon"];
+    return [e.date===now.toLocaleDateString("sv-SE")?"Hoy":"Próximo","soon"];
+  }
+  return ["Finalizado","done"];
+}
+function formatSessions(e){return e.sessions.map(s=>s[0]+"–"+s[1]).join(" · ")}
+function todayISO(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Madrid",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
+function matches(e){
+  const realDay=todayISO();
+  if(selectedDay==="today" && e.date!==realDay) return false;
+  if(selectedDay!=="today" && selectedDay!=="all" && e.date!==selectedDay) return false;
+  if(selectedFilter==="barcelona"&&e.city!=="barcelona")return false;
+  if(selectedFilter==="hospitalet"&&e.city!=="hospitalet")return false;
+  if(selectedFilter==="indoor"&&e.mode!=="indoor")return false;
+  if(selectedFilter==="outdoor"&&e.mode!=="outdoor")return false;
+  if(selectedFilter==="favorites"&&!favs.has(e.id))return false;
+  const q=search.value.trim().toLowerCase();
+  if(q && ![e.title,e.place,e.summary,e.age,e.price,e.tip].join(" ").toLowerCase().includes(q)) return false;
+  return true;
+}
+function render(){
+  const filtered=events.filter(matches).sort((a,b)=>toDate(a.date,a.sessions[0][0])-toDate(b.date,b.sessions[0][0]));
+  root.innerHTML=filtered.map(e=>{
+    const [status,cls]=eventStatus(e);
+    const hot=/fuego|pirotecnia/i.test(e.noise)?'<span class="tag warn">⚠ Atención</span>':'';
+    return `<article class="card">
+      <div class="cardtop">
+        <div><div class="time">${esc(dayLabel(e.date))} · ${esc(formatSessions(e))}</div><h3 class="title">${esc(e.title)}</h3></div>
+        <button class="star ${favs.has(e.id)?"on":""}" data-fav="${e.id}" aria-label="${favs.has(e.id)?"Quitar de guardados":"Guardar actividad"}">${favs.has(e.id)?"★":"☆"}</button>
+      </div>
+      <div class="place">📍 ${esc(e.place)}</div>
+      <div class="tags"><span class="tag ${cls}">${status}</span><span class="tag">${e.city==="hospitalet"?"L’Hospitalet":"Barcelona"}</span><span class="tag">${e.mode==="indoor"?"Interior":"Exterior"}</span>${hot}</div>
+      <p class="summary">${esc(e.summary)}</p>
+      <div class="quick">
+        <div class="q">Precio<strong>${esc(e.price)}</strong></div>
+        <div class="q">Edad<strong>${esc(e.age)}</strong></div>
+        <div class="q">Duración<strong>${esc(e.duration)}</strong></div>
+        <div class="q">Ruido<strong>${esc(e.noise)}</strong></div>
+      </div>
+      <details>
+        <summary>Más información ↓</summary>
+        <div class="detail">
+          <p><strong>Acceso / reserva:</strong> ${esc(e.reservation)}</p>
+          <p><strong>Dirección:</strong> ${esc(e.address)}</p>
+          <div class="tip"><strong>Para decidir con niños:</strong><br>${esc(e.tip)}</div>
+          <div class="actions">
+            <a class="btn primary" href="${e.map}" target="_blank" rel="noopener">Abrir Maps</a>
+            <a class="btn" href="${e.source}" target="_blank" rel="noopener">Fuente ↗</a>
+          </div>
+        </div>
+      </details>
+    </article>`;
+  }).join("");
+  count.textContent=filtered.length+" planes";
+  empty.style.display=filtered.length?"none":"block";
+  if(selectedDay==="today") listTitle.textContent="Para hoy";
+  else if(selectedDay==="all") listTitle.textContent="Todas las actividades";
+  else listTitle.textContent=dayLabel(selectedDay);
+  document.querySelectorAll("[data-fav]").forEach(btn=>btn.addEventListener("click",()=>{
+    const id=btn.dataset.fav;
+    favs.has(id)?favs.delete(id):favs.add(id);
+    localStorage.setItem(favKey,JSON.stringify([...favs]));
+    render();
+  }));
+}
+function updateNow(){
+  const now=new Date();
+  const realDay=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Madrid",year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
+  const todays=events.filter(e=>e.date===realDay);
+  const active=todays.filter(e=>eventStatus(e,now)[0]==="Ahora");
+  const upcoming=todays.flatMap(e=>e.sessions.map(s=>({e,start:toDate(e.date,s[0])}))).filter(x=>x.start>now).sort((a,b)=>a.start-b.start)[0];
+  const title=document.getElementById("nowTitle"), sub=document.getElementById("nowSub");
+  if(active.length){title.textContent=active.length===1?"Ahora: "+active[0].title:active.length+" actividades están en marcha";sub.textContent="Consulta las tarjetas marcadas “Ahora”";}
+  else if(upcoming){title.textContent="Próximo: "+upcoming.e.title;sub.textContent=upcoming.start.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Madrid"})+" · "+upcoming.e.place;}
+  else if(todays.length){title.textContent="No quedan planes de esta selección hoy";sub.textContent="Mira los días siguientes con los filtros";}
+  else {title.textContent="Guía de La Mercè 2026";sub.textContent="Selecciona un día para planificar";}
+}
+document.getElementById("dayFilters").addEventListener("click",e=>{
+  const b=e.target.closest("[data-day]");if(!b)return;selectedDay=b.dataset.day;
+  document.querySelectorAll("[data-day]").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));render();
+});
+document.getElementById("typeFilters").addEventListener("click",e=>{
+  const b=e.target.closest("[data-filter]");if(!b)return;selectedFilter=b.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));render();
+});
+search.addEventListener("input",render);
+const festivalDays=["2026-09-24","2026-09-25","2026-09-26","2026-09-27"];
+if(!festivalDays.includes(todayISO())){
+  selectedDay="all";
+  document.querySelectorAll("[data-day]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.day==="all"?"true":"false"));
+}
+updateNow();render();setInterval(()=>{updateNow();render()},60000);
+</script>
+</body>
+</html>
