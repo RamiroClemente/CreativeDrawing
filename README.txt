@@ -28,3 +28,4 @@ Upload the entire folder contents to the GitHub Pages repository root (or keep t
 
 
 2026-09-05 update: evergreen landing refined; hero profile image removed; preview gate simplified; mentorship links point to https://ramiroclemente.github.io/mentorship/ and open in a new tab; social icons standardized; typography restricted to Futura PT Book/Medium/Demi with minimum 12px (9pt).
+
